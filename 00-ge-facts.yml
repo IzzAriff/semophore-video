@@ -1,0 +1,7 @@
+---
+- name: Test Ansible connectivity for Switches and Routers
+  hosts: cisco
+  gather_facts: false
+  tasks:
+    - name: Gather IOS facts
+      cisco.ios.ios_facts:
