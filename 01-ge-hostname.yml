@@ -1,0 +1,17 @@
+---
+- name: Change Switch 1 Hostname and IP Domain Name
+  hosts: SW1
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: Change hostname to SW1
+      cisco.ios.ios_config:
+        lines:
+          - hostname SW1
+
+    - name: Change IP domain name to FYP.com
+      cisco.ios.ios_config:
+        lines:
+        - ip domain-name FYP.com
+
